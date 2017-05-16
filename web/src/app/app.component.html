@@ -1,0 +1,37 @@
+<div class="col-md-3"></div>
+
+
+<div  *ngIf="!authorized" id="login-box" class="col-md-6">
+  <h2>
+    Welcome to cycle-score.com!
+  </h2>
+  <p>We need access to your strava account to generate your score.</p>
+  <img *ngIf="!access_url" src="/assets/ajax-loader.gif" />
+  <a *ngIf="access_url" href="{{access_url}}">Grant access</a>
+</div>
+
+
+<div  *ngIf="authorized" id="main" class="col-md-6">
+
+  <div *ngIf="!getting_score && !score">
+    <h3>Calculate score</h3>
+    <label for="startDate" class="col-md-3">From: </label><input id="startDate" type="date" [(ngModel)]="startDate" placeholder="yyyy-mm-dd"/> <br />
+    <label for="endDate" class="col-md-3">To: </label><input id="endDate" type="date" [(ngModel)]="endDate"  placeholder="yyyy-mm-dd" /> <br />
+    <span class="col-md-3"></span><input (click)="getScore()" type="button" value="calculate" class="col-md-3" />
+  </div>
+
+
+  <div *ngIf="getting_score && !score">
+    <h2 *ngIf="!score">Calculating score, please wait!</h2>
+    <img *ngIf="!score" src="/assets/ajax-loader.gif" />
+  </div>
+
+
+  <div *ngIf="score && !getting_score">
+    <h2>Results!</h2>
+    <p class="results"><em>{{printScore()}}</em> calculated from <em>{{score.rides}}</em> rides.</p>
+    <input (click)="resetForm()" type="button" value="Calculate another" class="col-md-3" />
+  </div>
+
+
+</div>
