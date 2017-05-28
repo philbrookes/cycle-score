@@ -101,7 +101,7 @@ var _a;
 // The file contents for the current environment will overwrite these during build.
 const environment = {
     production: false,
-    apiHost: "http://localhost:8080"
+    apiHost: "http://www.cycle-score.com"
 };
 /* harmony export (immutable) */ __webpack_exports__["a"] = environment;
 

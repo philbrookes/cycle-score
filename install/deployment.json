@@ -1,0 +1,38 @@
+{
+  "apiVersion": "apps/v1beta1",
+  "kind": "Deployment",
+  "metadata": {
+    "labels": {
+      "run": "cyclescore",
+      "name": "cyclescore"
+    },
+    "name": "cyclescore"
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "run": "cyclescore",
+          "name":"cyclescore"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "image": "philbrookes/cyclescore:1.0.0",
+            "imagePullPolicy": "Always",
+            "name": "cyclescore",
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log"
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "restartPolicy": "Always",
+        "securityContext": {},
+        "terminationGracePeriodSeconds": 30
+      }
+    }
+  }
+}

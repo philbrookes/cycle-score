@@ -21,9 +21,9 @@ func GetConfig() *Config {
 		clientId: 17697,
 		port: 8080,
 		cookieLifetime: 1000,
-		oauthCallbackUrl: "http://www.cycle-score.com:8080/api/auth/callback",
+		oauthCallbackUrl: "http://www.cycle-score.com/api/auth/callback",
 		allowedMethods: []string{"GET", "PUT", "POST", "DELETE"},
-		allowedOrigins: []string{"http://localhost:8080", "http://127.0.0.1:8080"},
+		allowedOrigins: []string{"http://localhost", "http://127.0.0.1", "http://www.cycle-score.com", "http://cycle-score.com"},
 	}
 	return &config
 }

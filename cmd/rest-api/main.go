@@ -18,7 +18,7 @@ func main() {
 	controller.ConfigureScore(router.PathPrefix("/api/score").Subrouter())
 	controller.ConfigureAuth(router.PathPrefix("/api/auth").Subrouter())
 
-	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./web/public/")))
+	router.PathPrefix("/").Handler(http.FileServer(http.Dir("/usr/src/web/public/")))
 	http.Handle("/", router)
 
 	log.Fatal(http.ListenAndServe(config.GetConfig().GetPortListenerStr(), handlers.CORS(originsOk, methodsOk)(router)))
