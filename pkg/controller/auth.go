@@ -4,12 +4,12 @@ import (
 	"github.com/gorilla/mux"
 	"fmt"
 	"net/http"
-	"../config"
 	"github.com/strava/go.strava"
 	"os"
 	"encoding/json"
 	"time"
 	"strconv"
+	"github.com/philbrookes/cycle-score/pkg/config"
 )
 
 func ConfigureAuth(router *mux.Router) {

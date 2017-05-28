@@ -5,8 +5,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/gorilla/handlers"
 	"log"
-	"../../pkg/controller"
-	"../../pkg/config"
+	"github.com/philbrookes/cycle-score/pkg/config"
+	"github.com/philbrookes/cycle-score/pkg/controller"
 )
 
 func main() {
